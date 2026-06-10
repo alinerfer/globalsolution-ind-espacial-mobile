@@ -76,6 +76,7 @@ function PontoStatus({ status }: { status: string }) {
 export default function Mensagens() {
   const [mensagens, setMensagens] = useState<Mensagem[]>([]);
   const [novaMensagem, setNovaMensagem] = useState("");
+  const refScroll = useRef<ScrollView>(null);
 
   async function buscar() {
     const resp = await buscarApi("/api/mensagens");
@@ -105,6 +106,10 @@ export default function Mensagens() {
   return (
     <SafeAreaView style={estilos.container} edges={["bottom"]}>
       <ScrollView
+        ref={refScroll}
+        onContentSizeChange={() =>
+          refScroll.current?.scrollToEnd({ animated: false })
+        }
         style={estilos.lista}
         contentContainerStyle={estilos.listaConteudo}
       >
