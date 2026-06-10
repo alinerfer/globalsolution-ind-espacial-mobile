@@ -18,7 +18,7 @@ export async function buscarApi(
 
   if (resposta.status === 401) {
     limparSessao();
-    router.replace("/login");
+    router.replace("/");
   }
 
   return resposta;
