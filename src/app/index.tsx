@@ -34,7 +34,7 @@ export default function Inicio() {
       }
 
       salvarSessao(dados.token, dados.nome);
-      router.replace("/painel");
+      router.replace("/mensagens");
     } catch {
       setErro("Falha ao conectar com a Terra");
     }
