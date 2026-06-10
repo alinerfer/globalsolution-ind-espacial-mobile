@@ -1,1 +1,2 @@
-export const URL_API = "http://192.168.1.218:3000";
+export const URL_API =
+  "https://globalsolution-ind-espacial-web-production.up.railway.app";
